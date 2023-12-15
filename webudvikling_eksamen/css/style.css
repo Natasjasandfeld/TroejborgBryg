@@ -1,0 +1,463 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #FFFDF6;
+}
+
+/* Styling af menupunkter */
+
+a{
+    color: #FF8441;
+}
+
+/* Styling af navbar */
+
+.header{
+    background-color: #FFFDF6;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+}
+
+.header ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #FFFDF6;
+}
+
+/* Styling af anchor tags i navbaren */
+
+.header ul a{
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+}
+
+/* Styling når musen kører over menupunkter */
+
+.header ul a:hover{
+    background-color: #F0EAE1;
+}
+
+/* Styling af logo i navbar */
+
+.header .logo{
+    float: left;
+    display: block;
+    width: 2.5rem;
+    padding: 20px 20px;
+}
+
+/* Styling af menu til mobilenhed */
+
+.header .menu{
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+/* Styling af burgermenu i navbar */
+
+.header .menu-icon{
+    padding: 28px 20px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+}
+
+.header .menu-icon .nav-icon{
+    background-color: #FF8441;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition: background .2s ease-out;
+}
+
+.header .menu-icon .nav-icon:before{
+    background: #FF8441;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: 5px;
+}
+
+.header .menu-icon .nav-icon:after{
+    background: #FF8441;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: -5px;
+}
+
+/* Skjuler check box i navbar */
+
+.header .menu-btn{
+    display: none;
+}
+
+/* Effekt ved menupunkter frem ved burgermenu */
+
+.header .menu-btn:checked ~ .menu{
+    max-height: 240px;
+}
+
+/* Styling af kryds når check box er checked */
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon{
+    background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:before{
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:after{
+    transform: rotate(45deg);
+    top: 0;
+}
+
+/* Styling af submenuer i navbar */
+
+.header .submenu {
+    display: none;
+    position: relative;
+    top: 100%;
+    left: 0;
+    background-color:#FAF6EF;
+}
+
+.header .submenu li a:hover {
+   background-color: #F0EAE1;
+}
+
+.header .submenu li {
+    float: none;
+    margin-top: 0.5rem;
+}
+
+/* Viser submenuer når det tilsvarende menupunkt er i hover */
+.header .menu > li:hover .submenu {
+    display: block;
+}
+
+/* Styling af overskrift */
+
+.overskrift{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FF8441;
+    font-size: 0.8rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 6rem 0 0 0;
+}
+
+.overskriftfade{
+    color: #FF8441;
+    font-size: 1.6rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    opacity: 20%;
+    margin-top: -1.2rem;
+}
+
+/* Styling af tre  billeder på forside */
+
+.trebilleder{ 
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+.produkter, .klub, .webshop{
+    width: 10rem;
+    height: auto;
+    border: 1px solid #FF8441;
+    transition: all 0.5s ease;
+}
+
+.produkter:hover, .klub:hover, .webshop:hover{
+    transform: scale(1.06); 
+}
+
+
+
+h2{
+    color: #FF8441;
+    font-size: 0.8rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+h2:hover{
+    color: #F0EAE1;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* Styling af tekst på forside */
+
+.hvemervi{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    color: #FF8441;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h3{
+    font-size: 1.8rem;
+    transition: all 0.5s ease;
+}
+
+h3:hover{
+    color: #F0EAE1;
+}
+
+.velkommen{
+    text-align: justify;
+    font-size: 0.7rem;
+    margin: -1rem 3rem;
+    line-height: 1rem;
+}
+
+.visionforside{
+    font-weight: bold;
+}
+
+/* Styling af tegnede øldåser på forsiden */
+
+.tegnededaaser{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tegnededaaser img{
+    width: 16rem;
+    height: auto;
+    padding: 4rem 0;
+    transition: all 0.5s ease;
+}
+
+.tegnededaaser img:hover{
+    transform: scale(1.08);
+}
+
+/* Styling af footer */
+
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F0EAE1;
+    color: #FF8441;
+    padding: 10px;
+    font-size: 0.5rem;
+    text-align: center; 
+    box-shadow: 4px 1px 1px 0 rgba(0,0,0,.1);
+}
+
+.social-media{
+    margin-top: 0.6rem;
+}
+.social-media a {
+    margin: 0 0.2rem;
+}
+
+.footeroverskrift{
+    font-weight: bold;
+}
+
+/* Styling til tablet */
+
+@media (min-width:768px){
+
+.overskrift{
+        font-size: 1.5rem;
+    }
+    
+.overskriftfade{
+        font-size: 3.1rem;
+        margin-top: -2rem;
+    }
+
+.produkter, .klub, .webshop{
+        width: 20rem;
+        margin: 0 1rem;
+}
+
+h2{
+    font-size: 1.2rem;
+    padding-bottom: 1.5rem;
+}
+
+.velkommen{
+    padding: 0 8rem;
+    font-size: 1rem;
+    line-height: 1.6rem;
+}
+
+h3{
+    font-size: 2.6rem;
+}
+
+
+.tegnededaaser img{
+        width: 30rem;
+        height: auto;
+        padding-top: 5rem;
+}
+
+/* Styling af footer */
+
+.footer {
+    font-size: 0.8rem;
+}
+
+}
+
+/* Styling til almindelig laptop */
+
+@media (min-width:1024px){
+
+/* Navbar */
+
+    .header li{
+        float: left;
+    }
+
+    .header li a{
+        padding: 20px 30px;
+    }
+
+    .header .menu{
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+
+    .header .menu-icon{
+        display: none;
+    }
+
+/* Styling af overskrift */
+
+.overskrift{
+    padding: 6rem 6rem 0 6rem;
+}
+
+/* Styling af indhold */
+
+.trebilleder{
+    flex-direction:row;
+    margin-top: -0.2rem;
+}
+
+.produkter, .klub, .webshop{
+    width: 12rem;
+}
+
+.hvemervi{
+    flex-direction:row;
+}
+
+h3{
+    font-size: 2.2rem;
+    padding: 0 1rem 0 12rem;
+}
+
+.velkommen{
+    font-size: 0.9rem;
+    margin: 0;
+    line-height: 1.2rem;
+    padding: 0.8rem 12rem 0 1rem;
+}
+
+.tegnededaaser img{
+    width: 35rem;
+    height: auto;
+    padding-top: 2rem;
+}
+
+/* Styling af footer */
+
+
+.footer {
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    padding: 0.5rem 1.5rem;
+}
+}
+
+/* Styling til stor laptop */
+
+@media (min-width:1440px){
+
+/* Styling af overskrift */
+
+    .overskrift{
+        font-size: 2rem;
+        padding: 6rem 6rem 0 6rem;
+    }
+    
+    .overskriftfade{
+        font-size: 4rem;
+        margin-top: -2.8rem;
+    }
+
+/* Styling af indhold */
+
+    .produkter, .klub, .webshop{
+        width: 16rem;
+    }
+
+    h3{
+        font-size: 4rem;
+        padding: 0 1rem 0 19rem;
+    }
+
+    .velkommen{
+        font-size: 1.2rem;
+        line-height: 2rem;
+        padding: 0.8rem 19rem 0 1rem;
+    }
+    
+    .tegnededaaser img{
+            width: 40rem;
+            height: auto;
+            padding-top: 2rem;
+    }
+
+    /* Styling af footer */
+
+    .footer {
+        padding: 0.5rem 2rem;
+    }
+}
+
+
+
