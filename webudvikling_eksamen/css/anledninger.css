@@ -164,7 +164,7 @@ a{
     color: #FF8441;
     font-size: 0.75rem;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding: 5rem 0 0 0;
+    padding: 6rem 0 0 0;
 }
 
 .overskriftfade{
@@ -182,7 +182,7 @@ a{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem 2rem 2rem;
+    padding: 0.5rem 2.5rem 2rem;
 }
 
 .text {
@@ -215,6 +215,13 @@ a{
     cursor: pointer;
     display: inline-block;
     margin: 0.5rem 0;
+    transition: all 0.2s ease;
+}
+
+.readMoreLabel:hover{
+    background-color: #F0EAE1;
+    color: #FFFDF6;
+    border: none;
 }
 
 #mere {
@@ -331,19 +338,19 @@ a{
     /* Styling af overskrift */
 
 .overskrift{
-    font-size: 2rem;
+    font-size: 1.8rem;
+    padding-top: 6rem;
 }
 
 .overskriftfade{
-    font-size: 4.1rem;
-    margin-top: -2.5rem;
+    font-size: 3.6rem;
+    margin-top: -3.2rem;
 }
 
 /* Styling af tekst og infografik */
 
 .container {
-
-    padding: 0.5rem 11.5rem 4rem;
+    padding: 0.5rem 14rem 4rem;
 }
 
 .text {
@@ -374,19 +381,19 @@ a{
     /* Styling af overskrift */
 
     .overskrift{
-        font-size: 2.6rem;
+        font-size: 2rem;
+        padding-top: 8rem;
     }
     
     .overskriftfade{
-        font-size: 5.2rem;
-        margin-top: -3.6rem;
+        font-size: 4.1rem;
+        margin-top: -3.4rem;
     }
 
     /* Styling af tekst og infografik */
     
     .container {
-
-        padding: 0.5rem 19rem 4rem;
+        padding: 0.5rem 24rem 4rem;
     }
     
     .text {

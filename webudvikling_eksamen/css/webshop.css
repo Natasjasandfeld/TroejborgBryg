@@ -209,6 +209,7 @@ a{
 
 .højre{
     font-weight: bolder;
+    transition: all 0.2s ease;
 }
 
 .højre:hover{
@@ -441,13 +442,6 @@ a{
         font-size: 1.2rem;
         line-height: 2.2rem;
     }
-
- /* Styling af footer */
-
-    .footer {
-        padding: 0.5rem 2rem;
-}
-
 /* Styling af indkøbskurv */
 
 .signup-button {
@@ -455,4 +449,9 @@ a{
     padding: 1.5% 5%;
 }
 
+ /* Styling af footer */
+
+ .footer {
+    padding: 0.5rem 2rem;
+}
 }

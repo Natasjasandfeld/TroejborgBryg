@@ -1,0 +1,636 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #FFFDF6;
+}
+
+/* Styling af menupunkter */
+
+a{
+    color: #FF8441;
+}
+
+/* Styling af navbar */
+
+.header{
+    background-color: #FFFDF6;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+}
+
+.header ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #FFFDF6;
+}
+
+/* Styling af anchor tags i navbaren */
+
+.header ul a{
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+}
+
+/* Styling når musen kører over menupunkter */
+
+.header ul a:hover{
+    background-color: #F0EAE1;
+}
+
+/* Styling af logo i navbar */
+
+.header .logo{
+    float: left;
+    display: block;
+    width: 2.5rem;
+    padding: 20px 20px;
+}
+
+/* Styling af menu til mobilenhed */
+
+.header .menu{
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+/* Styling af burgermenu i navbar */
+
+.header .menu-icon{
+    padding: 28px 20px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+}
+
+.header .menu-icon .nav-icon{
+    background-color: #FF8441;
+    display: block;
+    height: 2px;
+    width: 18px;
+    position: relative;
+    transition: background .2s ease-out;
+}
+
+.header .menu-icon .nav-icon:before{
+    background: #FF8441;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: 5px;
+}
+
+.header .menu-icon .nav-icon:after{
+    background: #FF8441;
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: -5px;
+}
+
+/* Skjuler check box i navbar */
+
+.header .menu-btn{
+    display: none;
+}
+
+/* Effekt ved menupunkter frem ved burgermenu */
+
+.header .menu-btn:checked ~ .menu{
+    max-height: 240px;
+}
+
+/* Styling af kryds når check box er checked */
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon{
+    background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:before{
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.header .menu-btn:checked ~ .menu-icon .nav-icon:after{
+    transform: rotate(45deg);
+    top: 0;
+}
+
+/* Styling af submenuer i navbar */
+
+.header .submenu {
+    display: none;
+    position: relative;
+    top: 100%;
+    left: 0;
+    background-color:#FAF6EF;
+}
+
+.header .submenu li a:hover {
+   background-color: #F0EAE1;
+}
+
+.header .submenu li {
+    float: none;
+    margin-top: 0.5rem;
+}
+
+/* Viser submenuer når det tilsvarende menupunkt er i hover */
+.header .menu > li:hover .submenu {
+    display: block;
+}
+
+/* Styling af indhold */
+
+/* Styling af overskrift */
+
+.overskrift{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FF8441;
+    font-size: 0.8rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 6rem 0 0 0;
+}
+
+.overskriftfade{
+    color: #FF8441;
+    font-size: 1.6rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    opacity: 20%;
+    margin-top: -1.2rem;
+}
+
+/* Styling af første to billeder */
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 4rem 0;
+}
+
+.container .billeder{
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #FF8441;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.container #blaa{
+    margin-top: 0;
+}
+
+/* Styling af sidste to billeder */
+.container2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 4rem;
+}
+
+.container2 .billeder{
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #FF8441;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+.container2 #orange{
+    margin-top: 2rem;
+}
+
+/* Styling af tekst om varianterne */
+
+.container .omvarianten{
+    color: #FF8441;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+}
+
+.container2 .omvarianten2{
+    color: #FF8441;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+}
+
+/* Styling af "læs mere" knap */
+
+#readMoreCheckbox {
+    display: none;
+}
+
+.container .readMoreLabel {
+    background-color: #FFFDF6;
+    color: #FF8441;
+    border: 1px solid #FF8441;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.2rem;
+    transition: all 0.5s ease;
+
+ 
+}
+
+.container2 .readMoreLabel {
+    background-color: #FFFDF6;
+    color: #FF8441;
+    border: 1px solid #FF8441;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.2rem;
+    transition: all 0.5s ease;
+}
+
+.readMoreLabel:hover{
+    background-color: #F0EAE1;
+    color: #FFFDF6;
+    border: none;
+}
+
+#mere {
+    display: none;
+    margin-top: 2rem;
+}
+
+#readMoreCheckbox:checked + .readMoreLabel + #mere {
+    display: block;
+}
+
+#readMoreCheckbox:checked + .readMoreLabel:before {
+    content:"Vis mindre"
+}
+
+#readMoreCheckbox:not(:checked) + .readMoreLabel:before {
+    content: "Læs om varianten";
+}
+
+#readMoreCheckbox:checked ~ #mere {
+    display: block;
+}
+
+/* Styling af "læs mere" knap til produkt 2 */
+
+#readMoreCheckbox2 {
+    display: none;
+}
+
+#mere2 {
+    display: none;
+    margin-top: 2rem;
+}
+
+#readMoreCheckbox2:checked + .readMoreLabel + #mere2 {
+    display: block;
+}
+
+#readMoreCheckbox2:checked + .readMoreLabel:before {
+    content:"Vis mindre"
+}
+
+#readMoreCheckbox2:not(:checked) + .readMoreLabel:before {
+    content: "Læs om varianten";
+}
+
+#readMoreCheckbox2:checked ~ #mere2 {
+    display: block;
+}
+
+/* Styling af "læs mere" knap til produkt 3*/
+
+#readMoreCheckbox3 {
+    display: none;
+}
+
+#mere3 {
+    display: none;
+    margin-top: 2rem;
+}
+
+#readMoreCheckbox3:checked + .readMoreLabel + #mere3 {
+    display: block;
+}
+
+#readMoreCheckbox3:checked + .readMoreLabel:before {
+    content:"Vis mindre"
+}
+
+#readMoreCheckbox3:not(:checked) + .readMoreLabel:before {
+    content: "Læs om varianten";
+}
+
+#readMoreCheckbox3:checked ~ #mere3 {
+    display: block;
+}
+
+/* Styling af "læs mere" knap */
+
+#readMoreCheckbox4 {
+    display: none;
+}
+
+#mere4 {
+    display: none;
+    margin-top: 2rem;
+}
+
+#readMoreCheckbox4:checked + .readMoreLabel + #mere4 {
+    display: block;
+}
+
+#readMoreCheckbox4:checked + .readMoreLabel:before {
+    content:"Vis mindre"
+}
+
+#readMoreCheckbox4:not(:checked) + .readMoreLabel:before {
+    content: "Læs om varianten";
+}
+
+#readMoreCheckbo4:checked ~ #mere4 {
+    display: block;
+}
+
+/* Styling af footer */
+
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #F0EAE1;
+    color: #FF8441;
+    padding: 10px;
+    font-size: 0.5rem;
+    text-align: center; 
+    box-shadow: 4px 1px 1px 0 rgba(0,0,0,.1);
+    margin-top: 4rem;
+}
+
+.social-media{
+    margin-top: 0.6rem;
+}
+.social-media a {
+    margin: 0 0.2rem;
+}
+
+.footeroverskrift{
+    font-weight: bold;
+}
+
+/* Styling til tablet */
+
+@media (min-width:768px){
+    
+    /* Styling af overskrift */
+    
+    .overskrift{
+        font-size: 1.5rem;
+    }
+    
+    .overskriftfade{
+        font-size: 3rem;
+        margin-top: -2.6rem;
+    }
+/* Styling af tekst og billeder */
+
+.container{
+    padding: 1rem 12rem;
+}
+
+.container .billeder{
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.container2{
+    padding: 1rem 12rem;
+}
+
+.container2 .billeder{
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Styling af tekst om varianterne */
+
+.container .omvarianten{
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+}
+
+.container2 .omvarianten2{
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+}
+
+/* Styling af "læs mere knap" */
+
+.container .readMoreLabel {
+    padding: 1rem 1.4rem;
+}
+
+.containe2 .readMoreLabel {
+    padding: 1rem 1.4rem;
+}
+}
+
+/* Styling til almindelig laptop */
+    
+@media (min-width:1024px){
+    
+    /* Navbar */
+            
+        .header li{
+            float: left;
+        }
+            
+        .header li a{
+            padding: 20px 30px;
+        }
+            
+        .header .menu{
+            clear: none;
+            float: right;
+            max-height: none;
+        }
+            
+        .header .menu-icon{
+            display: none;
+        }
+                
+/* Indhold */
+
+/* Styling af overskrift */
+
+.overskrift{
+    font-size: 1.8rem;
+}
+
+.overskriftfade{
+    font-size: 3.6rem;
+    margin-top: -3.2rem;
+}
+    
+/* Styling af tekst og billede */
+
+/* Styling af billeder */
+
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .billeder{
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #FF8441;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.container #blaa{
+    margin-top: 0;
+}
+.container2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.container2 .billeder{
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #FF8441;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.container2 #orange{
+    margin-top: 0;
+}
+
+.container .kolonne{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+.container2 .kolonne{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+/* Styling af tekst om varianterne */
+
+.container .omvarianten{
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.container2 .omvarianten2{
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+/* Styling af "læs mere" knap */
+
+.container .readMoreLabel {
+    padding: 0.8rem 1.2rem;
+}
+
+.container2 .readMoreLabel {
+    padding: 0.8rem 1.2rem;
+}
+
+/* Styling af footer */
+
+.footer {
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    padding: 0.5rem 1.5rem;
+}
+}
+
+/* Styling til stor laptop */
+
+@media (min-width:1440px){
+
+/* Styling af overskrift */
+    
+    .overskrift{
+        font-size: 2rem;
+        padding: 6rem 0 0 0;
+    }
+        
+    .overskriftfade{
+        font-size: 4.1rem;
+        margin-top: -3.2rem;
+    }
+
+/* Styling af billeder og tekst */
+
+.container{
+    padding: 0 20rem;
+}
+
+.container2{
+    padding: 0 20rem;
+}
+
+.container .kolonne{
+    margin: 2rem;
+}
+
+.container2 .kolonne{
+    margin: 2rem;
+}
+
+ /* Styling af footer */
+
+ .footer {
+    padding: 0.5rem 2rem;
+}
+
+
+}
