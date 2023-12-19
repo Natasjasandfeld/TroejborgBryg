@@ -572,6 +572,16 @@ a{
     line-height: 1.5rem;
 }
 
+.container a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container2 a{
+    text-decoration: none;
+    font-weight: bold;
+}
+
 /* Styling af "læs mere" knap */
 
 .container .readMoreLabel {
